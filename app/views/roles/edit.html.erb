@@ -1,0 +1,13 @@
+<h1>Update Role</h1>
+
+<%= form_with(model: @role) do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name,class:"form-control" %>
+  </div>
+
+  <div class="actions mt-4 mb-3">
+    <%= form.submit "Edit Role",class:"btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+      <h1>Roles</h1>
+    </div>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Users count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roles.each do |role| %>
+      <tr>
+        <td><%= role.name %></td>
+        <td><%= role.users.count %></td>
+        <td><%= link_to 'Show', role, class:"btn btn-warning" %> | <%= link_to 'Edit', edit_role_path(role), class:"btn btn-primary" %> | <%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Create Role', new_role_path, class:"btn btn-success" %>
