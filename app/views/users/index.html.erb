@@ -5,7 +5,8 @@
     <div class="col">
       <h1>Users</h1>
     </div>
-    <%= link_to 'Download Users Excel', download_users_excel_users_path(format: :xlsx) %>
+    <%= link_to 'Download Users PDF', download_users_pdf_users_path(format: :pdf) %>
+
     <div class="col">
       <%= form_with(url: users_path, method: :get, local: true) do |form| %>
         <%= form.select :role_id, options_from_collection_for_select(Role.all, :id, :name), { include_blank: 'Select Role' }, { class: 'form-select', onchange: 'this.form.submit();' } %>

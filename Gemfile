@@ -29,6 +29,7 @@ gem "jbuilder"
 gem "rolify"
 gem 'will_paginate'
 gem 'byebug'
+gem 'prawn'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

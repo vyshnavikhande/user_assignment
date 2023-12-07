@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'users#index'
-  resources :users
+  resources :users do 
+    collection do
+      get :download_users_pdf
+    end
+  end
   resources :roles
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

@@ -1,3 +1,4 @@
+require 'prawn'
 class UsersController < ApplicationController
   def index
     role = Role.find(params['role_id']) if params['role_id']
@@ -53,6 +54,19 @@ class UsersController < ApplicationController
     @user.destroy
 
     redirect_to users_path, notice: 'User was successfully destroyed.'
+  end
+
+  def download_users_pdf
+    @users = User.all
+
+    pdf = Prawn::Document.new
+    pdf.text 'Users List', size: 18, style: :bold
+
+    @users.each do |user|
+      pdf.text "#{user.id}: #{user.first_name} #{user.last_name} - #{user.email}"
+    end
+
+    send_data pdf.render, type: 'application/pdf', filename: 'users.pdf'
   end
 
   private

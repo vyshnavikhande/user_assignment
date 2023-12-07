@@ -77,10 +77,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    axlsx (1.3.6)
-      htmlentities (~> 4.3.1)
-      nokogiri (>= 1.4.1)
-      rubyzip (>= 0.9.5)
     base64 (0.2.0)
     bigdecimal (3.1.4)
     bindex (0.8.1)
@@ -109,7 +105,6 @@ GEM
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    htmlentities (4.3.4)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -151,6 +146,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
+    pdf-core (0.9.0)
+    prawn (2.4.0)
+      pdf-core (~> 0.9.0)
+      ttfunk (~> 1.7)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.4)
@@ -222,6 +221,7 @@ GEM
     stringio (3.1.0)
     thor (1.3.0)
     timeout (0.4.1)
+    ttfunk (1.7.0)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -250,13 +250,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  axlsx
   bootsnap
   byebug
   capybara
   debug
   importmap-rails
   jbuilder
+  prawn
   puma (>= 5.0)
   rails (~> 7.1.2)
   rolify
